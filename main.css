@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    background: rgba(88, 145, 241, 0.41);
+}
+*{
+    box-sizing: border-box;
+}
+.display_f{
+    display: flex;
+}
+.user_cart{
+    height: 700px;
+    width: 575px;
+    margin: 20px 0 20px 45px;
+    background: #c5953f;
+    color: white;
+    border-radius: 20px;
+}
+.user_cart>h3{
+    padding: 0;
+    text-align: center;
+}
+.user_cart>img{
+    height: 300px;
+    border-radius: 50%;
+    margin: 15px 0 0 150px;
+}
+.user_cart>p{
+    text-align: center ;
+}
+.lorem{
+    margin-left: 150px;
+    width: 300px;
+}
