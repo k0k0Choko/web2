@@ -1,11 +1,11 @@
 <Html>
 <Head>
 <Meta http-equiv = "Content-Type" content = "text / html; charset = utf-8">
-<Title> Лабораторна робота №4</title>
+<Title> Лабораторна робота №5</title>
 <style>
 .sign {
 float: left;
-padding: 8px;
+padding: 8px;*
 margin: 10px 0 5px 5px;
 background: #FFFFFF;
 }
@@ -306,7 +306,7 @@ to {opacity: 1;}
 <p>catchPhrase: Centralized empowering task-force </p>
 <p>bs: target end-to-end models </p>
 </div>
-
+        
 </figure>
 <script>
 function openCity(evt, cityName) {
