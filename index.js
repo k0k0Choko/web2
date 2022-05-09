@@ -1,26 +1,25 @@
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(value => value.json())
-    .then(users => {
+const http = require("http");
+const fs = require('fs').promises;
+const host = 'localhost';
+const port = 8000;
+let indexFile;
 
-        for (const user of users) {
-            let userDiv = document.createElement('div');
+const requestListener = function (req, res) {
+    res.setHeader("Content-Type", "text/html");
+    res.writeHead(200);
+    res.end(indexFile);
+};
 
-            let title = document.createElement('h2');
-            title.innerText = `${user.name}`;
-            userDiv.append(title);
+const server = http.createServer(requestListener);
 
-            let info = document.createElement('p');
-            info.innerText = `${user.email}  
-                               ${user.address.street}, ${user.address.suite}, ${user.address.city}
-                               ${user.phone}
-                               ${user.website}
-                               ${user.company.name}`;
-            userDiv.append(info);
-
-
-
-            let target = document.getElementById('target');
-            target.append(userDiv);
-        }
-
+fs.readFile(__dirname + "/index.JSON")
+    .then(contents => {
+        indexFile = contents;
+        server.listen(port, host, () => {
+            console.log(`Server is running on http://${host}:${port}`);
+        });
+    })
+    .catch(err => {
+        console.error(`Could not read index.html file: ${err}`);
+        process.exit(1);
     });
